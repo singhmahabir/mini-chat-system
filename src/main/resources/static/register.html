@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Registration Page</title>
+<link rel="stylesheet" type="text/css" href="my.css" />
+
+
+
+<script>
+	
+</script>
+</head>
+
+<body background="image/1.jpg" topmargin="30" leftmargin="100">
+	<marquee>
+		<h1>
+			<font color="blue">Welcome to Chat System</font>
+		</h1>
+	</marquee>
+	<br>
+	<br>
+	<hr color="blue">
+	<br>
+	<br>
+
+	<center>
+
+		<form name="myForm" action="save.jsp" onsubmit="return validateForm()"
+			method="post">
+
+			User Name* :<input type="text" name="userName" size="25" placeholder="Username" required="required" /> <br>
+			Password* <input type="password" name="pass" size="25" required="required" min="4"/> <br>
+			First Name :<input type="text" name="fName" size="25" placeholder="First Name" required="required"> <br>
+			Last Name :<input type="text" name="lName" size="25"> <br>
+			Email &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp:<input type="email"
+				size="25" name="email" /> <br>
+			Address&nbsp&nbsp&nbsp&nbsp&nbsp:<input type="text" name="address"
+				size="25" /> <br> Date Of Berth*&nbsp&nbsp:<input type="date"
+				name="dob" /> <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<input type="submit" value="register" /><input type="reset" name="s"
+				value="Reset" /> <br>
+
+		</form>
+
+		<hr color="blue">
+	</center>
+</body>
+</html>

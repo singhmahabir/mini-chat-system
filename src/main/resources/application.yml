@@ -1,0 +1,57 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+#  datasource:
+#    name: h2
+#    driverClassName: org.h2.Driver
+#    initialization-mode: never
+#    url: jdbc:h2:mem:h2
+#    url: jdbc:h2:mem:testdb  # default url
+# h2.console.enabled=true is required to access the DB through UI
+
+## Session store type.
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: embedded # Database schema initialization mode.
+      schema: classpath:org/springframework/session/jdbc/schema-@@platform@@.sql # Path to the SQL file to use to initialize the database schema.
+      table-name: SPRING_SESSION # Name of the database table used to store sessions.
+  h2:
+    console:
+      enabled: true
+  jpa:
+    generate-ddl: true
+    hibernate:
+#   You should not use both spring.jpa.hibernate.ddl-auto and schema.sql
+     ddl-auto: update #create, update, create-drop is default, validate and none: 
+    show-sql: true
+#   If you're using Spring boot 2, database initialization only works for embedded databases (H2, HSQLDB
+  datasource:
+    initialization-mode: always
+#    If you're using multiple database vendors, you can name your file data-h2.sql or data-mysql.sql depending on which database platform you want to use. To make that work, you'll have to configure the spring.datasource.platform
+#    platform: h2
+  messages:
+    basename: validation
+  security:
+   user:
+    name: user
+# If we don’t configure the password using the predefined property spring.security.user.password and start the application,
+# we’ll notice that a default password is randomly generated and printed in the console log:
+# Using default security password: c8be15de-4488-4490-9dc6-fab3f91435c6
+    password: user
+
+server:
+  port: 8082
+  servlet:
+    session:
+      timeout: 30 # Session timeout. If a duration suffix is not specified, seconds are used.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude:
+#        - env
+        - beans

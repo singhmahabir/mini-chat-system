@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Login Page</title>
+<script src="js/Validation.js"></script>
+
+</head>
+<body background="image/1.jpg" bgcolor="teal" text="red" topmargin="40"
+	leftmargin="200">
+	<marquee>
+
+		<h1>
+			<font color="blue">Welcome to Chat System</font>
+		</h1>
+	</marquee>
+
+	<center>
+		<h3>Incorrect User Id or Password</h3>
+		<form name="myForm" action="login.jsp"
+			onsubmit="return validateCredencials()" method="post">
+			User Id &nbsp&nbsp&nbsp:<input type="text" name="uid"> <br>
+			Password:<input type="password" name="pass"> <br> <a
+				href="forget.html">Forget Password</a> <br> <input
+				type="submit"><input type="reset" name="s" value="Reset" />
+	</center>
+	<hr>
+	<h2 align="center">New Users</h2>
+
+	<h2 align="center">
+		<a href="register.html">Register</a>
+	</h2>
+</body>
+</html>
